@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Physic Game</title>
-
+<link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
 <body>
@@ -10,17 +10,18 @@
 <h1>The Psychic Game</h1><!-- Guess what letter I'm thinking of -->    
 <h2>Guess what letter I'm thinking of.</h2>
 
+
 <!-- # of times the user has guessed the letter correctly -->   
-<p>Wins:</p>
+<p>Wins:<input id="wins"/></p>
 
 <!--# of times the user has failed to guess the letter correctly after exhausting all guesses--> 
-<p>Losses:</p>
+<p>Losses:<input id="losses"/></p>
 
 <!-- # of guesses left. This will update --> 
-<p>Guesses left:</p>
+<p>Guesses left:<input id="attemptsLeft"/></p>
 
 <!--The specific letters that the user typed. Display these until the user either wins or loses.--> 
-<p>Your guesses so far:</p>
+<p>Your guesses so far:<input id="guessSoFar"/></p>
 
 <!-- When the player wins, increase the Wins counter and start the game over again (without refreshing the page).-->
 
