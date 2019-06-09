@@ -9,7 +9,7 @@ var guess = 0;
 var guessedLetter = "";
 
 // App randomly picks a letter
-var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var letter = alphabet[Math.floor(Math.random() * alphabet.length)];
     
 
@@ -18,18 +18,28 @@ var letter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
 function userGuess(event) {
 
-    guess = event.keyCode;
+            guess = event.keyCode; 
+
              if(guess >= 65 && guess <= 90) {
-             var guess = String.fromCharCode(guess);
-             document.getElementById("guessSoFar").innerHTML = "The pressed key was: " + guess;
-             }
+              var guess = String.fromCharCode(guess);
+                  document.getElementById("guessSoFar").innerHTML = "The pressed key was: " + guess;
+                }
+            else {
+                alert ("Please pick a letter.")
+            }
 
-             else {
-                 alert ("Please pick a letter.");
+            if (guess == letter) {
+                document.getElementById("wins").innerHTML = "You win!";
+            }
+        
+            else {
+                document.getElementById("losses").innerHTML = "You lose";
+        
+            }    
 
-             }
-   }
+    }
 
+    
    //     if(guess >= 65 &&  =< 91) {
 
   //      document.getElementById("guessSoFar").innerHTML = "The pressed key was: " + guess;
