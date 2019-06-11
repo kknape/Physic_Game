@@ -5,7 +5,7 @@ var wins = 1;
     document.getElementById ("wins").innerHTML = ("Wins: 0");
 var losses = 1;
     document.getElementById ("losses").innerHTML = ("Losses: 0");
-var attemptsLeft = 1;
+var attemptsLeft = 2;
     document.getElementById ("attemptsLeft").innerHTML = ("Attempts left: " + attemptsLeft);
 var guessSoFar = [];
 var guess = 0;
@@ -34,18 +34,15 @@ function userGuess(event) {
                  //if the guess isn't a letter, ask them to choose a letter.
                          else {
                                  alert ("Please pick a letter.");
-                                 document.onkeyup = function(event){
-                                    userGuess(event);
-                                        }  
-
-                                 }
-
+                                    return;
+                                        }   
 
         //if guess equals the randowm letter, add one to the wins, pick a new random letter
             if (guess == letter) {
                 alert ("Good guess! You win!");
                 document.getElementById("wins").innerHTML = ("Wins: " + (wins++));
                 var replay = confirm("Play again?");
+                document.getElementById("attemptsLeft").innerHTML = ("Attempts left: "  + (attemptsLeft=2));
                     
                 if (replay) {
                         randomLetter ();
@@ -56,16 +53,21 @@ function userGuess(event) {
         //user guesses again
             else {
                 if (attemptsLeft <= 0)
-                { 
-                     document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
-
-       //             guessSoFar.push(guess);
-      //              document.getElementById("guessSoFar").innerHTML = "  " + guessSoFar.join(",");
-
-                }
+                 { 
+                    alert ("Sorry, that was you last guess.");
+                    document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
+                     var replay = confirm("Play again?");
+                     document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=2));
+                     document.getElementById("guessSoFar").innerHTML = "Your guesses so far: ";
+                     guessSoFar = [];
+                     
+                     if (replay) {
+                        randomLetter ();
+                             }
+                     }
                 else {
                     alert ("Sorry, that's not it. Guess again.");
-                    document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft--));
+                    document.getElementById("attemptsLeft").textContent = "Attempts left: " + --attemptsLeft;
                     guessSoFar.push(guess);
                     document.getElementById("guessSoFar").innerHTML = "Your guesses so far: " + guessSoFar.join(",");
                 
@@ -74,7 +76,6 @@ function userGuess(event) {
                     }   
                 }
                 
-
     document.onkeyup = function(event){
             userGuess(event);
                 }   
