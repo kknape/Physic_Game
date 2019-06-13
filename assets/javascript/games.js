@@ -5,7 +5,7 @@ var wins = 1;
     document.getElementById ("wins").innerHTML = ("Wins: 0");
 var losses = 1;
     document.getElementById ("losses").innerHTML = ("Losses: 0");
-var attemptsLeft = 2;
+var attemptsLeft = 9;
     document.getElementById ("attemptsLeft").innerHTML = ("Attempts left: " + attemptsLeft);
 var guessSoFar = [];
 var guess = 0;
@@ -42,9 +42,11 @@ function userGuess(event) {
                 alert ("Good guess! You win!");
                 document.getElementById("wins").innerHTML = ("Wins: " + (wins++));
                 var replay = confirm("Play again?");
-                document.getElementById("attemptsLeft").innerHTML = ("Attempts left: "  + (attemptsLeft=2));
+               
                     
                 if (replay) {
+                        document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
+                        document.getElementById("guessSoFar").innerHTML = "Your guesses so far: ";
                         randomLetter ();
                     }
                 }
@@ -69,7 +71,7 @@ function userGuess(event) {
                     alert ("Sorry, that's not it. Guess again.");
                     document.getElementById("attemptsLeft").textContent = "Attempts left: " + --attemptsLeft;
                     guessSoFar.push(guess);
-                    document.getElementById("guessSoFar").innerHTML = "Your guesses so far: " + guessSoFar.join(",");
+                    document.getElementById("guessSoFar").innerHTML = "Your guesses so far: " + guessSoFar.join(", ");
                 
                 }   
                     
