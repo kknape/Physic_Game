@@ -42,11 +42,12 @@ function userGuess(event) {
                 alert ("Good guess! You win!");
                 document.getElementById("wins").innerHTML = ("Wins: " + (wins++));
                 var replay = confirm("Play again?");
+                document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
+                document.getElementById("guessSoFar").innerHTML = ("Your guesses so far: " + (guessSoFar = []));
                
                     
                 if (replay) {
-                        document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
-                        document.getElementById("guessSoFar").innerHTML = "Your guesses so far: ";
+                        
                         randomLetter ();
                     }
                 }
@@ -59,9 +60,8 @@ function userGuess(event) {
                     alert ("Sorry, that was you last guess.");
                     document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
                      var replay = confirm("Play again?");
-                     document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=2));
-                     document.getElementById("guessSoFar").innerHTML = "Your guesses so far: ";
-                     guessSoFar = [];
+                     document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
+                     document.getElementById("guessSoFar").innerHTML = ("Your guesses so far: " + (guessSoFar = []));
                      
                      if (replay) {
                         randomLetter ();
