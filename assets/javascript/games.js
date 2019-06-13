@@ -46,39 +46,49 @@ function userGuess(event) {
                 if (replay) {
                     playAgain();
                     }
-                }
+                  }
         
         //if quess does not equal the random letter, subtract 1 from attempts left, add the guessed letter to Guesses so far
         //user guesses again
-            else {
-                if (attemptsLeft <= 0)
-                 { 
-                    alert ("Sorry, that was you last guess. You lose that round.");
-                    document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
-                     var replay = confirm("Play again?");
+        //  else {
+            //   if (attemptsLeft <= 0)
+            //   { 
+            //       alert ("Sorry, that was you last guess. You lose that round.");
+            //      document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
+            //      var replay = confirm("Play again?");
  
-                        if (replay) {
-                            playAgain();
-                       }
-                     }
+            //         if (replay) {
+            //              playAgain();
+            //       }
+                
                 else {
                     alert ("Sorry, that's not it. Guess again.");
                     document.getElementById("attemptsLeft").textContent = "Attempts left: " + --attemptsLeft;
                     guessSoFar.push(guess);
                     document.getElementById("guessSoFar").innerHTML = "Your guesses so far: " + guessSoFar.join(", ");
-                
-                }   
-                    
-                    }   
                 }
-           
+                    if (attemptsLeft <= 0) {
+                            document.getElementById("attemptsLeft").innerHTML = "Attempts left: " + attemptsLeft;
+                            document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
+                            replay = confirm ("Sorry, you lost that round. Want to play again?");
+                          
+                            if (replay) {
+                                playAgain();
+                         }
+                    }
+                       
+            }
+       
+    
+        
+    
     function playAgain(){
         document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
         document.getElementById("guessSoFar").innerHTML = ("Your guesses so far: " + (guessSoFar = []));
+        randomLetter();
         return;
     }            
 
     document.onkeyup = function(event){
             userGuess(event);
                 }   
-    
