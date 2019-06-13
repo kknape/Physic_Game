@@ -44,7 +44,7 @@ function userGuess(event) {
                 var replay = confirm("Play again?");
                     
                 if (replay) {
-                    replay();
+                    playAgain();
                     }
                 }
         
@@ -58,7 +58,7 @@ function userGuess(event) {
                      var replay = confirm("Play again?");
  
                         if (replay) {
-                            replay();
+                            playAgain();
                        }
                      }
                 else {
@@ -72,11 +72,12 @@ function userGuess(event) {
                     }   
                 }
            
-    function replay(){
+    function playAgain(){
         document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
         document.getElementById("guessSoFar").innerHTML = ("Your guesses so far: " + (guessSoFar = []));
-        randomLetter ();
+        return;
     }            
+
     document.onkeyup = function(event){
             userGuess(event);
                 }   
