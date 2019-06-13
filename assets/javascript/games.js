@@ -42,13 +42,9 @@ function userGuess(event) {
                 alert ("Good guess! You win!");
                 document.getElementById("wins").innerHTML = ("Wins: " + (wins++));
                 var replay = confirm("Play again?");
-                document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
-                document.getElementById("guessSoFar").innerHTML = ("Your guesses so far: " + (guessSoFar = []));
-               
                     
                 if (replay) {
-                        
-                        randomLetter ();
+                    replay();
                     }
                 }
         
@@ -57,15 +53,13 @@ function userGuess(event) {
             else {
                 if (attemptsLeft <= 0)
                  { 
-                    alert ("Sorry, that was you last guess.");
+                    alert ("Sorry, that was you last guess. You lose that round.");
                     document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
                      var replay = confirm("Play again?");
-                     document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
-                     document.getElementById("guessSoFar").innerHTML = ("Your guesses so far: " + (guessSoFar = []));
-                     
-                     if (replay) {
-                        randomLetter ();
-                             }
+ 
+                        if (replay) {
+                            replay();
+                       }
                      }
                 else {
                     alert ("Sorry, that's not it. Guess again.");
@@ -77,7 +71,12 @@ function userGuess(event) {
                     
                     }   
                 }
-                
+           
+    function replay(){
+        document.getElementById("attemptsLeft").innerHTML = ("Attempts left: " + (attemptsLeft=9));
+        document.getElementById("guessSoFar").innerHTML = ("Your guesses so far: " + (guessSoFar = []));
+        randomLetter ();
+    }            
     document.onkeyup = function(event){
             userGuess(event);
                 }   
