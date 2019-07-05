@@ -16,26 +16,34 @@
 <body>
 <div class="container" class="mx-auto" style="width: 1000px;">
 
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid" id="myContainer">
                 <div class="container" >
-                  <h1 class="display-4" id="myHeader">The Psychic Game</h1>
-                  <div class="mx-auto" style="width: 800px;">
-                    <div class="card mx-auto" style="width: 36rem;" id="myCard">
-                        <div class="card-body">
-                          <h2 class="card-title">Guess what letter I'm thinking of.</h2>
-                          <p class="card-text" id="instructionTxt">Use the keyboard to enter your guess.</p>
+                    <div class="row">
+                        <div class="col col-lg-12">
+                            <h1 class="display-4" id="myHeader">The Psychic Game</h1>
                         </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item" id="wins">Wins: </li>
-                          <li class="list-group-item" id="losses">Losses: </li>
-                          <li class="list-group-item" id="attemptsLeft">Attempts left:  </li>
-                          <li class="list-group-item" id="guessSoFar">Your guesses so far: </li>
-                        </ul>
-                      </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col col-lg-12">    
+                            <div class="mx-auto" style="width: 800px;">
+                                <div class="card mx-auto" style="width: 36rem;" id="myCard">
+                                    <div class="card-body">
+                                        <h2 class="card-title">Guess what letter I'm thinking of.</h2>
+                                        <p class="card-text" id="instructionTxt">Use the keyboard to enter your guess.</p>
+                                    </div>
+                                        <ul class="list-group list-group-flush">
+                                        <li class="list-group-item" id="wins">Wins: </li>
+                                        <li class="list-group-item" id="losses">Losses: </li>
+                                        <li class="list-group-item" id="attemptsLeft">Attempts left:  </li>
+                                        <li class="list-group-item" id="guessSoFar">Your guesses so far: </li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>    
                     </div>
                 </div>
-            </div>
-
+        </div>
 
 
 <!-- # of times the user has guessed the letter correctly 

@@ -1,9 +1,12 @@
-h1 {color: rgb(99, 99, 163);
+#myContainer {
+    margin-top: 50px;
 }
+
 #myHeader{
     text-align: center;
     font-family: 'Barriecito', cursive;
     font-size: 64pt;
+    color: rgb(99, 99, 163);
 }
 #instructionTxt {
     font-size: 12pt;
