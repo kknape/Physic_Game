@@ -47,19 +47,6 @@ function userGuess(event) {
                     playAgain();
                     }
                   }
-        
-        //if quess does not equal the random letter, subtract 1 from attempts left, add the guessed letter to Guesses so far
-        //user guesses again
-        //  else {
-            //   if (attemptsLeft <= 0)
-            //   { 
-            //       alert ("Sorry, that was you last guess. You lose that round.");
-            //      document.getElementById("losses").innerHTML = ("Losses: " + (losses++));
-            //      var replay = confirm("Play again?");
- 
-            //         if (replay) {
-            //              playAgain();
-            //       }
                 
                 else {
                     alert ("Sorry, that's not it. Guess again.");
